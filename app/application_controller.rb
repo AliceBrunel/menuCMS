@@ -8,5 +8,8 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "menuscollection"
   end
 
+  get '/' do
+    "Hello"
+  end
 
 end
