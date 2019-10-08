@@ -1,0 +1,7 @@
+<h1>All the meals</h1>
+
+<% @meals.each do |meal| %>
+  <div>
+    <a href="/meals/<%= meal.slug %>"><%= meal.name %></a>
+  </div>
+<% end %>

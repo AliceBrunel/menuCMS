@@ -1,6 +1,6 @@
 <h1>All the menus</h1>
 
-<% Menu.all.each do |menu| %>
+<% @menus.each do |menu| %>
   <div>
     <a href="/menus/<%= menu.slug %>"><%= menu.name %></a>
   </div>
