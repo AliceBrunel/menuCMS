@@ -44,7 +44,7 @@ class MenusController < ApplicationController
     if logged_in?
     @menu = Menu.find_by_slug(params[:slug])
       if @menu && @menu.user == current_user
-        erb :'menu/edit'
+        erb :'menus/edit'
       else
         redirect to '/menus'
       end
