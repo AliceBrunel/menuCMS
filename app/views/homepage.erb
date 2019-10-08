@@ -6,11 +6,21 @@
 </head>
 
 <body>
-<h1>Hi, welcome on MenuCMS!</h1>
-<p>Please, sign in to see the options:</p>
-<a href="/signin">Sign In</a>
-<p>If you don't already have an account, you will have to register:</p>
-<a href="/signup">Sign Up</a>
+<h1>Hi, welcome on Restaurant page!</h1>
+
+<p>Today's menu is:</p>
+
+<% if logged_in? %>
+
+   <a href="/menus/new"> Create Menu </a>
+   <a href="/logout"> Log Out </a>
+   <p>Welcome, <%=current_user.username %></p>
+
+ <% else %>
+   <a href="/signup">New team member</a>
+   <a href="/login"> Sign In </a>
+ <%end %>
+
 </body>
 
 </html>
