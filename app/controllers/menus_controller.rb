@@ -31,7 +31,7 @@ class MenusController < ApplicationController
       if params[:name] == ""
         redirect to '/create-menu'
       else
-        @menu = Menu.create(:name => params[:name])
+        @menu = current_user.menus.build(name: params[:name])
         @menu.save
         redirect to "/menus/#{@menu.slug}"
       end
