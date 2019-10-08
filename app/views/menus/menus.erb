@@ -2,6 +2,6 @@
 
 <% @menus.each do |menu| %>
   <div>
-    <%= menu.name %>
+    <a href="/menus/#{menu.slug}"<%= menu.name %></a>
   </div>
 <% end %>
