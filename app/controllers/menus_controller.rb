@@ -9,7 +9,15 @@ class MenusController < ApplicationController
     end
   end
 
-  get '/menus/[:slug]' do
+    get '/menus/create-menu' do
+      if logged_in?
+        erb :'menus/create_menu'
+      else
+        redirect to '/signin'
+      end
+    end
+
+  get '/menus/:slug' do
     if logged_in?
       @menu = Menu.find_by_slug(params[:slug])
       erb :'menus/show'
@@ -18,13 +26,6 @@ class MenusController < ApplicationController
     end
   end
 
-  get '/menus/create-menu' do
-    if logged_in?
-      erb :'menus/create_menu'
-    else
-      redirect to '/signin'
-    end
-  end
 
   post '/menus' do
     if logged_in?
@@ -33,7 +34,7 @@ class MenusController < ApplicationController
       else
         @menu = Menu.create(:name => params[:name])
         @menu.save
-        redirect to "/menus/#{@menu.id}"
+        redirect to "/menus/#{@menu.slug}"
       end
     else
       redirect to '/signin'

@@ -1,7 +1,7 @@
 <p> Welcome, <%= current_user.username %>
 
-<% @menus.each do |menu| %>
+<% Menu.all.each do |menu| %>
   <div>
-    <a href="/menus/#{menu.slug}"<%= menu.name %></a>
+    <a href="/menus/<%= menu.slug %>"><%= menu.name %></a>
   </div>
 <% end %>
