@@ -62,7 +62,9 @@ class MenusController < ApplicationController
         @menu = Menu.find_by_slug(params[:slug])
           if @menu && @menu.user == current_user
             @menu.update(params[:menu])
-            @menu.meal_ids = params[:meals]
+            unless params[:meals].empty?
+              @menu.meals << Meal.create(params[:meals])
+            end
             @menu.save
             redirect to "/menus/#{@menu.slug}"
           else
