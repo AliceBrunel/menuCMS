@@ -9,4 +9,12 @@ class MenusController < ApplicationController
     end
   end
 
+  get '/create-menu' do
+    if logged_in?
+      erb :'menus/create_menu'
+    else
+      redirect to '/signin'
+    end
+  end
+
 end
