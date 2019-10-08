@@ -17,4 +17,17 @@ class MenusController < ApplicationController
     end
   end
 
+  post '/menus' do
+    if logged_in?
+      if params[:name] == ""
+        redirect to '/create-menu'
+      else
+        @menu = Menu.create(:name => params[:name])
+        @menu.save
+        redirect to "/menus/#{@menu.id}"
+      end
+    else
+      redirect to '/signin'
+    end
+  end
 end
