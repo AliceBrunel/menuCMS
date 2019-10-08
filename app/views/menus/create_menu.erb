@@ -1,0 +1,15 @@
+<h3>Create menu</h3>
+<form action="/menus" method="POST">
+  <p>Name: <input type="text" name="name"></p>
+
+    <p>Add Meals</p>
+
+  <% Meal.all.each do |meal| %>
+  <label><%= meal.name %></label>
+  <input type="checkbox" id="meal_<%=meal.id%>" name="menu[meal_ids][]" value="<%= meal.id %>"><br>
+  <% end %>
+  <input type="submit">
+</form>
+
+
+<p>If your meal isn't it the list, maybe you will want <a href="/create-meal">to create it</a></p>
