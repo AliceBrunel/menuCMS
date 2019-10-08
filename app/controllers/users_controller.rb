@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/signin' do
+  post '/signup' do
     if params[:username] == "" || params[:email] == "" || params[:password] == "" || params[:role] == ""
       redirect to '/signup'
     else
