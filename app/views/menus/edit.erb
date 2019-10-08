@@ -8,7 +8,7 @@
   <label>Meals</label>
   <% Meal.all.each do |meal| %>
   <p><%= meal.name %></p>
-  <input type="checkbox" name="meals[]" value="<%= meal.id %>" <%= 'checked' if @menu.meals.include?(meal) %>>
+  <input type="checkbox" name="menu[meal_ids][]" value="<%= meal.id %>" <%= 'checked' if @menu.meals.include?(meal) %>>
   <% end %>
 
   <input type="submit" value="Save">
