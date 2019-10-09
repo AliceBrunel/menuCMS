@@ -31,7 +31,7 @@ class MealsController < ApplicationController
       if params[:name] == ""
         redirect to '/create-menu'
       else
-        @meal = Meal.new(name => params[:name], ingredients => params[:ingredients], method => params[:method])
+        @meal = Meal.new(:name => params[:name], :ingredients => params[:ingredients], :method => params[:method])
         @meal.save
         redirect to "/meals/#{@meal.slug}"
       end
