@@ -10,6 +10,10 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    erb :restaurant_page, :layout => false
+  end
+
+  get '/team' do
     erb :homepage
   end
 
