@@ -3,7 +3,7 @@ class MealsController < ApplicationController
   get '/meals' do
     if logged_in?
       @meals = Meal.all
-      erb :'meals/meals'
+      erb :'meals/meals', :layout => :layout
     else
       redirect to '/signin'
     end

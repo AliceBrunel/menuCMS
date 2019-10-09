@@ -1,26 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>MenuCMS Homepage</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>MenuCMS Homepage</title>
+    <link rel="stylesheet" type="text/css" href="public/style.css">
+  </head>
 
-<body>
-<h1>Hi, welcome on Restaurant page!</h1>
+  <body>
+    <h1>Hi, welcome on Restaurant page!</h1>
 
-<p>Today's menu is:</p>
+    <p>Today's menu is:</p>
 
-<% if logged_in? %>
-
-   <a href="/menus/new"> Create Menu </a>
-   <a href="/logout"> Log Out </a>
-   <p>Welcome, <%=current_user.username %></p>
-
- <% else %>
-   <a href="/signup">New team member</a>
-   <a href="/login"> Log in </a>
- <%end %>
-
-</body>
+  </body>
 
 </html>

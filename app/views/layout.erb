@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="public/style.css">
+<link rel="stylesheet" type="text/css" href="/style.css">
 <meta charset="UTF-8">
 <title>MenuCMS</title>
 
 </head>
 
 <body>
+  <nav>
+    <ul>
+      <% if logged_in? %>
+      <p>Welcome, <%=current_user.username %></p>
+      <li><a class="active" href="/">Homepage</a></li>
+      <li><a href="/menus/create-menu"> Create Menu </a></li>
+      <li><a href="/meals/create-meal"> Create Meal </a></li>
+      <li><a href="/logout"> Log Out </a></li>
+      <% else %>
+      <li><a href="/signup">New team member</a></li>
+      <li><a href="/login"> Log in </a></li>
+      <%end %>
+    </ul>
+  </nav>
   <div class="container">
       <%= yield %>
   </div>
