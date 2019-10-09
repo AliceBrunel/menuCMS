@@ -11,13 +11,13 @@
   <nav>
     <ul>
       <% if logged_in? %>
-      <p>Welcome, <%=current_user.username %></p>
-      <li><a class="active" href="/">Restaurant Page</a></li>
+      <li style="float:left"><a href="/users/user-id">Welcome, <%=current_user.username %></a></li>
+      <li><a class="active"  href="/logout"> Log Out </a></li>
+      <li><a href="/">Restaurant Page</a></li>
       <li><a href="/menus/create-menu"> Create a menu </a></li>
       <li><a href="/meals/create-meal"> Create a meal </a></li>
-      <li><a href="/logout"> Log Out </a></li>
       <% else %>
-      <li><a href="/signup">New team member</a></li>
+      <li><a href="/signup">Add a member</a></li>
       <li><a href="/login"> Log in </a></li>
       <%end %>
     </ul>
