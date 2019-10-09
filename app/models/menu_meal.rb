@@ -1,4 +1,4 @@
 class MenuMeal < ActiveRecord::Base
   belongs_to :menu
-  belongs_to :genre
+  belongs_to :meal
 end

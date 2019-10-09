@@ -1,6 +1,7 @@
 class Meal < ActiveRecord::Base
+  belongs_to :user
   has_many :menu_meals
-  has_many :menus, through: :menu_meals
+  has_many :menus, :through => :menu_meals
 
   def slug
     slug_name = self.name.downcase.split(" ")
