@@ -16,6 +16,7 @@ body {
 
 h1 {
   color: #525252;
+  margin: auto;
 }
 
 p {
@@ -49,6 +50,10 @@ li a:hover {
 
 .active {
   background: blue;
+}
+
+.container {
+  padding-top: 10px;
 }
 
 .main-page {
@@ -128,4 +133,58 @@ li a:hover {
 
 .column {
   flex-direction: column;
+}
+
+.form {
+  background-color: #F9F5F2;
+  margin: auto;
+  width: 700px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.form h1 {
+  text-align: center;
+}
+
+.form-input {
+  padding-top: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #68975F;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+input[type=submit]:hover {
+  background-color: #05938A;
 }
