@@ -16,7 +16,6 @@ body {
 
 h1 {
   color: #525252;
-  margin: auto;
 }
 
 p {
@@ -128,7 +127,19 @@ li a:hover {
 }
 
 .small-button {
+  height: 40px;
+  display: flex;
+  width: fit-content;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  color: white;
 
+  background-image: #5FA6AF;
+  background-image: -webkit-linear-gradient(180deg, #FFFFFF -235.58%, #5FA6AF 100%);
+  background-image: linear-gradient(180deg, #FFFFFF -235.58%, #5FA6AF 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .column {
@@ -187,4 +198,48 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #05938A;
+}
+
+.all-items {
+  background-color: #F9F5F2;
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.item-card {
+  text-align: center;
+  background-color: white;
+  display: inline-block;
+  margin: 5px;
+  width: 400px;
+  min-height: 150px;
+  border-radius: 10px;
+}
+
+.item-card a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.item-show {
+  background-color: #F9F5F2;
+  margin: auto;
+  padding: 30px;
+}
+
+.item-show h1, a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-meals {
+    min-height: 300px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    margin: 0px 0px 15px 0px;
 }

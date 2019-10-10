@@ -1,12 +1,15 @@
-<h1>Menu name</h1>
-<a href="/menus/<%= @menu.slug %>"><%= @menu.name %></a>
-<br>
-<ul>
-<% @menu.meals.each do |meal| %>
-  <li><%= meal.name %></li>
-<% end %>
-</ul>
-<br>
-<a href="/menus/<%= @menu.slug %>/edit">Edit</a>
-<a href="/menus">Menus</a>
-<a href="/">Go Home</a>
+<div class="item-show">
+  <a href="/menus"><- All menus</a>
+  <h1><a href="/menus/<%= @menu.slug %>"><%= @menu.name %></a></h1>
+  <div class="menu-meals">
+    <% if @menu.meals.empty? %>
+    <p><%= "This menu is empty" %></p>
+    <% else %>
+      <% @menu.meals.each do |meal| %>
+        <p><%= meal.name %></p>
+      <% end %>
+    <% end %>
+  </div>
+  <a class="small-button" href="/menus/<%= @menu.slug %>/edit">Edit this menu</a>
+
+</div>

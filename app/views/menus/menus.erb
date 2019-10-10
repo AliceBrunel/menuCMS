@@ -1,7 +1,10 @@
+<div class="all-items">
 <h1>All the menus</h1>
 
 <% @menus.each do |menu| %>
-  <div>
+  <div class="item-card">
     <a href="/menus/<%= menu.slug %>"><%= menu.name %></a>
+    <p><%= menu.meals %></p>
   </div>
 <% end %>
+</div>
