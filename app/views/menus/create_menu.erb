@@ -1,15 +1,20 @@
-<h3>Create menu</h3>
-<form action="/menus" method="POST">
-  <p>Name: <input type="text" name="name"></p>
 
-    <p>Add Meals</p>
+<div class="form">
+<h1>Create menu</h1>
+  <div class="form-input">
+    <form action="/menus" method="POST">
+      <label>Name</label>
+        <input type="text" name="name">
 
-  <% Meal.all.each do |meal| %>
-  <label><%= meal.name %></label>
-  <input type="checkbox" id="meal_<%=meal.id%>" name="meals[]" value="<%= meal.id %>"><br>
-  <% end %>
-  <input type="submit">
-</form>
+        <h2>Add Meals</h2>
+        <p>If your meal isn't below, it means it doesn't exist yet. You can save your menu idea and add your meals later.</p>
+        <br>
 
-
-<p>If your meal isn't it the list, maybe you will want <a href="/create-meal">to create it</a></p>
+      <% Meal.all.each do |meal| %>
+      <label><%= meal.name %></label>
+      <input type="checkbox" id="meal_<%=meal.id%>" name="meals[]" value="<%= meal.id %>"><br>
+      <% end %><br>
+      <input type="submit">
+    </form>
+  </div>
+</div>
