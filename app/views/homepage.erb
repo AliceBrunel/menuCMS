@@ -1,23 +1,42 @@
+
 <div class="main-page">
   <div id="welcome">
-    <h1>Hi, welcome on Menu CMS</h1>
+
+    <% if logged_in? %>
+    <h1>Hi, welcome on MenuCMS</h1>
       <p>You can either:</p>
       <div class="selector">
-          <div class="big-button">
+          <a href="/menus/create-menu" class="big-button">
             <p>Create a menu</p>
-          </div>
-          <div class="big-button">
-            <p>Create a meal<</p>
-          </div>
+          </a>
+          <a href="/meals/create-meal" class="big-button">
+            <p>Create a meal</p>
+          </a>
       </div>
-      <p>Or</p>
-      <div class="selector">
-        <div class="full-button">
+      <p>Or:</p>
+      <div class="selector column">
+        <a href="/menus" class="full-button">
         <p>View all menus</p>
+        </a>
+        <a href="/meals" class="full-button">
+          <p>View all meals</p>
+        </a>
+      </div>
+
+        <% else %>
+        <h1>Hi, welcome on MenuCMS</h1>
+        <p>you are not logged in!</p>
+        <p>Please, log in or add a member:</p>
+        <div class="selector column">
+          <a href="/login" class="full-button">
+            <p>Log in</p>
+          </a>
+          <a href="/signup" class="full-button">
+            <p>Add a member</p>
+          </a>
         </div>
-        <div class="full-button">
-          <p>View all menus</p>
-        </div>
+        <% end %>
+
       </div>
   </div>
 
