@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  get '/user/:username' do
+    @user = User.find_by(:username => params[:username])
+    erb :'users/show'
+  end
+
   get '/signup' do
     if !logged_in?
       erb :'users/create_user'

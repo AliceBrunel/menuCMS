@@ -1,7 +1,7 @@
 <div class="item-show">
   <a href="/menus"><- All menus</a>
   <h1><a href="/menus/<%= @menu.slug %>"><%= @menu.name %></a></h1>
-  <div class="menu-meals">
+  <div class="details">
     <% if @menu.meals.empty? %>
     <p><%= "This menu is empty" %></p>
     <% else %>

@@ -1,0 +1,22 @@
+<div class="item-show">
+  <h1>Welcome <%= @user.username %></h1>
+
+  <div>
+    <h2>All your menus</h2>
+    <%@user.menus.each do |menu|%>
+      <div class="user-item">
+        <p><a href="/menus/<%= menu.slug %>"><%= menu.name %></a></p>
+      </div>
+      <% end %>
+  </div>
+
+    <div>
+      <h2>All your meals</h2>
+        <%@user.meals.each do |meal|%>
+        <div class="user-item">
+          <p><a href="/menus/<%= meal.slug %>"><%= meal.name %></a></p>
+        </div>
+        <% end %>
+    </div>
+
+</div>
