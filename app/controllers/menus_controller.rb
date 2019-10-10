@@ -32,8 +32,11 @@ class MenusController < ApplicationController
         redirect to '/create-menu'
       else
         @menu = current_user.menus.build(name: params[:name])
+        @menu.meals << Meal.find(params[:meals])
         @menu.save
+
         redirect to "/menus/#{@menu.slug}"
+
       end
     else
       redirect to '/signin'

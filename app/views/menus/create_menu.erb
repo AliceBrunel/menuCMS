@@ -6,7 +6,7 @@
 
   <% Meal.all.each do |meal| %>
   <label><%= meal.name %></label>
-  <input type="checkbox" id="meal_<%=meal.id%>" name="menu[meal_ids][]" value="<%= meal.id %>"><br>
+  <input type="checkbox" id="meal_<%=meal.id%>" name="meals[]" value="<%= meal.id %>"><br>
   <% end %>
   <input type="submit">
 </form>
