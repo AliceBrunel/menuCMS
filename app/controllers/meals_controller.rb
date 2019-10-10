@@ -73,4 +73,17 @@ class MealsController < ApplicationController
     end
   end
 
+  delete '/meals/:slug' do
+    if logged_in?
+      @meal = Meal.find_by_slug(params[:slug])
+      if @meal && @meal.user == current_user
+        @meal.delete
+      end
+      redirect to '/meals'
+    else
+      redirect to '/login'
+    end
+  end
+
+
 end

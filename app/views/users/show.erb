@@ -14,7 +14,7 @@
       <h2>All your meals</h2>
         <%@user.meals.each do |meal|%>
         <div class="user-item">
-          <p><a href="/menus/<%= meal.slug %>"><%= meal.name %></a></p>
+          <p><a href="/meals/<%= meal.slug %>"><%= meal.name %></a></p>
         </div>
         <% end %>
     </div>
