@@ -18,4 +18,10 @@
       <input  type="submit" value="Delete" class="delete-button">
     </form>
   <% end %>
+  <% if current_user.role == "manager" %>
+    <form method="POST" action="/menus/<%= @menu.slug %>/activate">
+      <input type="hidden" name="_method" value="PATCH">
+      <input  type="submit" value="Activate">
+    </form>
+  <% end %>
 </div>

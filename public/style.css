@@ -248,6 +248,13 @@ textarea {
   min-height: fit-content;
 }
 
+
+.activated {
+  border-color: green;
+  border-width: 2px;
+  border-style: solid;
+}
+
 .item-card a {
   text-transform: uppercase;
   text-decoration: none;
