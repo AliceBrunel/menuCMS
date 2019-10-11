@@ -11,8 +11,8 @@
       <% end %>
     <% end %>
   </div>
-  <a class="small-button" href="/menus/<%= @menu.slug %>/edit">Edit this menu</a>
   <% if @creator == current_user %>
+  <a class="small-button" href="/menus/<%= @menu.slug %>/edit">Edit this menu</a>
     <form method="POST" action="/menus/<%= @menu.slug %>/DELETE">
       <input type="hidden" name="_method" value="DELETE">
       <input  type="submit" value="Delete" class="delete-button">

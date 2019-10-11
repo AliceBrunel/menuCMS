@@ -9,6 +9,14 @@ class MenusController < ApplicationController
     end
   end
 
+  get '/menus/create-menu' do
+    if logged_in?
+      erb :'menus/create_menu'
+    else
+      redirect to '/signin'
+    end
+  end
+
   get '/menus/:slug' do
     if logged_in?
       @menu = Menu.find_by_slug(params[:slug])
@@ -19,13 +27,6 @@ class MenusController < ApplicationController
     end
   end
 
-  get '/menus/create-menu' do
-    if logged_in?
-      erb :'menus/create_menu'
-    else
-      redirect to '/signin'
-    end
-  end
 
   post '/menus' do
     if logged_in?
@@ -54,6 +55,7 @@ patch '/menus/:slug/activate' do
 
       @deactivated_menu.each do |activated|
         activated.activated = 0
+        activated.save
       end
 
     end

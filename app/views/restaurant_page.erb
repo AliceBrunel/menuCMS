@@ -10,7 +10,10 @@
     <h1>Hi, welcome on Restaurant page!</h1>
 
     <p>Today's menu is:</p>
-
+    <p><%= @menu.name %></p>
+    <% @menu.meals.each do |meal| %>
+    <p><%= meal.name %></p>
+    <% end %>
   </body>
 
 </html>

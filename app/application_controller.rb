@@ -10,6 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    @menu = Menu.find_by activated: 1
     erb :restaurant_page, :layout => false
   end
 

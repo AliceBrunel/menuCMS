@@ -19,7 +19,6 @@ class UsersController < ApplicationController
     else
       @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password], :role => params[:role])
       @user.save
-      binding.pry
       session[:user_id] = @user.id
       redirect to '/menus'
     end
@@ -46,9 +45,9 @@ class UsersController < ApplicationController
   get '/logout' do
     if logged_in?
       session.clear
-      redirect to '/'
+      redirect to '/team'
     else
-      redirect to '/'
+      redirect to '/team'
     end
   end
 
