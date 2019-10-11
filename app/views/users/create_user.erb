@@ -4,13 +4,13 @@
   <div class="form-input">
     <form action="/signup" method="POST">
       <label>Username</label>
-      <input type="text" name="username">
+      <input type="text" name="username" required>
       <label>Email</label>
-      <input type="text" name="email">
+      <input type="text" name="email" required>
       <label>Create a password</label>
-      <input type="password" name="password">
+      <input type="password" name="password" required>
       <label>Your role</label>
-        <select>
+        <select required>
           <option value="team member" selected>Team member</option>
           <option value="manager" selected>Manager</option>
         <select>

@@ -20,6 +20,7 @@ class MenusController < ApplicationController
   get '/menus/:slug' do
     if logged_in?
       @menu = Menu.find_by_slug(params[:slug])
+      @creator = @menu.user
       erb :'menus/show'
     else
       redirect to '/signin'
@@ -75,5 +76,18 @@ class MenusController < ApplicationController
       redirect to '/login'
     end
   end
+
+
+    delete '/menus/:slug/DELETE' do
+      if logged_in?
+        @menu = Menu.find_by_slug(params[:slug])
+        if @menu && @menu.user == current_user
+          @menu.delete
+        end
+        redirect to '/menus'
+      else
+        redirect to '/login'
+      end
+    end
 
 end

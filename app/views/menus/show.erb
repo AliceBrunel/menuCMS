@@ -1,6 +1,7 @@
 <div class="item-show">
   <a href="/menus"><- All menus</a>
   <h1><a href="/menus/<%= @menu.slug %>"><%= @menu.name %></a></h1>
+  <p>Posted by <%= @creator.username %></p>
   <div class="details">
     <% if @menu.meals.empty? %>
     <p><%= "This menu is empty" %></p>
@@ -11,5 +12,10 @@
     <% end %>
   </div>
   <a class="small-button" href="/menus/<%= @menu.slug %>/edit">Edit this menu</a>
-
+  <% if @creator == current_user %>
+    <form method="POST" action="/menus/<%= @menu.slug %>/DELETE">
+      <input type="hidden" name="_method" value="DELETE">
+      <input  type="submit" value="Delete" class="delete-button">
+    </form>
+  <% end %>
 </div>

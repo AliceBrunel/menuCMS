@@ -20,6 +20,7 @@ class MealsController < ApplicationController
   get '/meals/:slug' do
     if logged_in?
       @meal = Meal.find_by_slug(params[:slug])
+      @creator = @meal.user
       erb :'meals/show'
     else
       redirect to '/signin'
@@ -73,7 +74,7 @@ class MealsController < ApplicationController
     end
   end
 
-  delete '/meals/:slug' do
+  delete '/meals/:slug/DELETE' do
     if logged_in?
       @meal = Meal.find_by_slug(params[:slug])
       if @meal && @meal.user == current_user

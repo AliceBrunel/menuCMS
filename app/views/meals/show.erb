@@ -1,15 +1,17 @@
 <div class="item-show">
   <a href="/meals"><- All meals</a>
   <h1><a href="/meals/<%= @meal.slug %>"><%= @meal.name %></a></h1>
+  <p>Posted by <%= @creator.username %></p>
   <div class="details">
     <p><%= @meal.ingredients %></p>
     <br>
     <p><%= @meal.method %></p>
   </div>
   <a class="small-button" href="/meals/<%= @meal.slug %>/edit">Edit this meal</a>
-
-  <form method "POST" action="/meals/<%= @meal.slug %>">
+<% if @creator == current_user %>
+  <form method="POST" action="/meals/<%= @meal.slug %>/DELETE">
     <input type="hidden" name="_method" value="DELETE">
     <input  type="submit" value="Delete" class="delete-button">
   </form>
+<% end %>
 </div>
