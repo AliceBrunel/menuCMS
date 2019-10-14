@@ -13,7 +13,7 @@
       <% if logged_in? %>
       <li style="float:left"><a href="/user/<%= current_user.username %>">Welcome, <%=current_user.username %></a></li>
       <li><a class="active"  href="/logout"> Log Out </a></li>
-      <li><a href="/">View Restaurant Page</a></li>
+      <li><a href="/" target="_blank">View Restaurant Page</a></li>
       <li><a href="/menus/create-menu"> Create a menu </a></li>
       <li><a href="/meals/create-meal"> Create a meal </a></li>
       <li><a href="/meals"> All meals </a></li>

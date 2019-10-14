@@ -32,7 +32,7 @@ class MealsController < ApplicationController
       if params[:name] == ""
         redirect to '/create-menu'
       else
-        @meal = current_user.meals.build(name: params[:name], ingredients: params[:ingredients], method: params[:method] )
+        @meal = current_user.meals.build( name: params[:name], ingredients: params[:ingredients], method: params[:method] )
         @meal.save
         redirect to "/meals/#{@meal.slug}"
       end

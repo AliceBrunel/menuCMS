@@ -3,17 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <title>MenuCMS Homepage</title>
-    <link rel="stylesheet" type="text/css" href="public/style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
 
-  <body>
+  <body id="restaurant">
     <h1>Hi, welcome on Restaurant page!</h1>
-
+    <div id="restaurant-card">
     <p>Today's menu is:</p>
+    <div id="menu-card">
     <p><%= @menu.name %></p>
     <% @menu.meals.each do |meal| %>
     <p><%= meal.name %></p>
     <% end %>
+    </p>
+    </div>
+
   </body>
 
 </html>

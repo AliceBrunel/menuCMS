@@ -48,7 +48,7 @@ class MenusController < ApplicationController
   patch '/menus/:slug/activate' do
     if logged_in?
       @deactivated_menu = Menu.where(activated: 1)
-      if !@deactivated_menu.empty?
+      if !@deactivated_menu.empty? && current_user.role == "manager"
         @deactivated_menu.each do |activated|
           activated.activated = 0
           activated.save
