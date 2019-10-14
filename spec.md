@@ -20,11 +20,11 @@ Specs:
 - [x] Ensure that users can't modify content created by other users
 -------- The application controllers will not allow a user to modify other users' resource, and the UI simply doesn't show these possibilies when they are not necessary.
 - [x] Include user input validations
--------- In forms and within the controllers, with the use of Flash messages, the input are validated only if they are right, otherwise the application will redirect the user to another page or print out a flash message. In some form, required input are also constrained in the HTML form.
+-------- In forms and within the controllers, with the use of Flash messages, the input are validated only if they are right, otherwise the application will redirect the user to another page or print out a flash message. In some form, required input are also constrained in the HTML form. For forms using the parameters of an input as a slug URL, ASCII caracters are delete within the slug method.
 - [x] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
---------
+-------- The user gets a failing message when the surname or email in the registering form for users already exists.
 - [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
---------
+
 
 Confirm
 - [x] You have a large number of small Git commits
