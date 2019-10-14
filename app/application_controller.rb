@@ -7,6 +7,8 @@ class ApplicationController < Sinatra::Base
 
     enable :sessions
     set :session_secret, "menuscollection"
+
+    register Sinatra::Flash
   end
 
   get '/' do

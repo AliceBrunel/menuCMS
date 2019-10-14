@@ -1,12 +1,19 @@
 <div class="form">
   <h3>Sign up and add a new user:</h3>
 
+
   <div class="form-input">
     <form action="/signup" method="POST">
       <label>Username</label>
       <input type="text" name="username" required>
+        <% if flash[:username_exists] %>
+          <p class="flash-input"><%= flash[:username_exists] %></p>
+        <% end %>
       <label>Email</label>
       <input type="text" name="email" required>
+      <% if flash[:email_exists] %>
+        <p class="flash-input"><%= flash[:email_exists] %></p>
+      <% end %>
       <label>Create a password</label>
       <input type="password" name="password" required>
       <label>Your role</label>

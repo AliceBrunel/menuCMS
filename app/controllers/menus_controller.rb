@@ -45,29 +45,23 @@ class MenusController < ApplicationController
     end
   end
 
-patch '/menus/:slug/activate' do
-  if logged_in?
-
-    # This is really terrible
-    @deactivated_menu = Menu.where(activated: 1)
-
-    if !@deactivated_menu.empty?
-
-      @deactivated_menu.each do |activated|
-        activated.activated = 0
-        activated.save
+  patch '/menus/:slug/activate' do
+    if logged_in?
+      @deactivated_menu = Menu.where(activated: 1)
+      if !@deactivated_menu.empty?
+        @deactivated_menu.each do |activated|
+          activated.activated = 0
+          activated.save
+        end
       end
-
+      @menu = Menu.find_by_slug(params[:slug])
+      @menu.activated = 1
+      @menu.save
+      redirect to '/menus'
+    else
+      redirect to '/signin'
     end
-    @menu = Menu.find_by_slug(params[:slug])
-    @menu.activated = 1
-    @menu.save
-
-    redirect to '/menus'
-  else
-    redirect to '/signin'
   end
-end
 
   get '/menus/:slug/edit' do
     if logged_in?
@@ -82,7 +76,6 @@ end
     end
   end
 
-#Patch for partial update of menu
   patch '/menus/:slug' do
     if logged_in?
       if params[:name] == ""
@@ -102,17 +95,16 @@ end
     end
   end
 
-
-    delete '/menus/:slug/DELETE' do
-      if logged_in?
-        @menu = Menu.find_by_slug(params[:slug])
-        if @menu && @menu.user == current_user
-          @menu.delete
-        end
-        redirect to '/menus'
-      else
-        redirect to '/login'
+  delete '/menus/:slug/DELETE' do
+    if logged_in?
+      @menu = Menu.find_by_slug(params[:slug])
+      if @menu && @menu.user == current_user
+        @menu.delete
       end
+      redirect to '/menus'
+    else
+      redirect to '/login'
     end
+  end
 
 end

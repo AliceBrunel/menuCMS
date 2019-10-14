@@ -16,6 +16,12 @@ class UsersController < ApplicationController
   post '/signup' do
     if params[:username] == "" || params[:email] == "" || params[:password] == "" || params[:role] == ""
       redirect to '/signup'
+    elsif User.find_by(:username => params[:username])
+      flash[:username_exists] = "This username already exists."
+      redirect to '/signup'
+    elsif User.find_by(:email => params[:email])
+      flash[:email_exists] = "This email already exists."
+      redirect to '/signup'
     else
       @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password], :role => params[:role])
       @user.save
