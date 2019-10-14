@@ -5,7 +5,7 @@ class Meal < ActiveRecord::Base
 
   def slug
     slug_name = self.name.downcase.split(" ")
-    slug_name.join("-")
+    slug_name.join("-").gsub(/\P{ASCII}/, '-')
   end
 
   def self.find_by_slug(slug_name)
