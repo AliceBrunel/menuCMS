@@ -1,10 +1,14 @@
-<h1>Edit <%= @meal.name %></h1>
 
-<form action="/meals/<%= @meal.slug %>" method="POST">
-  <input type="hidden" name="_method" value="PATCH">
-  <label>Name</label>
-    <input type="text" name="meal[name]" value="<%= @meal.name %>" required>
-    <input type="text" name="meal[ingredients]" value="<%= @meal.ingredients %>">
-    <input type="text" name="meal[method]" value="<%= @meal.method %>">
-  <input type="submit" value="Save">
-</form>
+<div class="form">
+  <h1>Edit <%= @meal.name %></h1>
+  <div class="form-input">
+    <form action="/meals/<%= @meal.slug %>" method="POST">
+      <input type="hidden" name="_method" value="PATCH">
+      <label>Name</label>
+        <input type="text" name="meal[name]" value="<%= @meal.name %>" required>
+        <input type="text" name="meal[ingredients]" value="<%= @meal.ingredients %>">
+        <input type="text" name="meal[method]" value="<%= @meal.method %>">
+      <input type="submit" value="Save">
+    </form>
+  </div>
+</div>
