@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if params[:username] == "" || params[:email] == "" || params[:password] == "" || params[:role] == ""
+    if params[:username] == "" || params[:email] == "" || params[:password] == ""
       redirect to '/signup'
     elsif User.find_by(:username => params[:username])
       flash[:username_exists] = "This username already exists."
@@ -44,7 +44,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect to '/menus'
     else
-      redirect to '/signup'
+      flash[:user_signup] = "Wrong username and password combination. Try to create a user?"
+      redirect to '/login'
     end
   end
 

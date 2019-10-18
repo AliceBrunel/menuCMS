@@ -1,5 +1,10 @@
 <div class="form">
   <h1>Log In</h1>
+  <% if flash[:user_signup] %>
+
+  <p> <%= flash[:user_signup] %> </p>
+  <a href="/signup" class="small-button">Create a user</a>
+  <% end %>
   <div class="form-input">
     <form method="POST" action="/login">
       <label>Username</label>
